@@ -1,7 +1,5 @@
-# Author: Bayu Aditya
-FROM python:3.7
+FROM node:lts
+COPY frontend/ /code
 WORKDIR /code
-COPY requirement.txt requirement.txt
-RUN pip install -r requirement.txt
-COPY . .
-CMD ["python", "app-runner.py"]
+RUN npm install
+CMD ["npm", "start"]
