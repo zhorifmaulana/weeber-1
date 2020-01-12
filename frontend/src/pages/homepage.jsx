@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, useRef, useState } from 'react';
 
 import Header from '../components/header/header.component';
 import Heroes from '../components/heroes/heroes.component';
@@ -7,23 +7,32 @@ import Team from '../components/team/team.component';
 import Footer from '../components/footer/footer.component';
 
 const HomePage = () => {
+  const [isHidden, setIsHidden] = useState(true);
+
   const home = useRef();
   const product = useRef();
   const team = useRef();
   const contactUs = useRef();
 
-  const onHomeFocus = () => window.scrollTo({top: home.current.offsetTop, behavior: 'smooth'});
-  const onProductFocus = () => window.scrollTo({top: product.current.offsetTop-76.75, behavior: 'smooth'});
-  const onTeamFocus = () => window.scrollTo({top: team.current.offsetTop-76.75, behavior: 'smooth'});
-  const onContactUsFocus = () => window.scrollTo({top: contactUs.current.offsetTop-76.75, behavior: 'smooth'});
+  const onFocus = (ref) => {
+    window.scrollTo({top: ref.current.offsetTop-76.75, behavior: 'smooth'});
+    setIsHidden(true);
+  }
+
+  const navbarToggler = () => {
+      setIsHidden(!isHidden);
+    }
 
   return (
   <Fragment>
     <Header
-      onHomeFocus={onHomeFocus}
-      onProductFocus={onProductFocus}
-      onTeamFocus={onTeamFocus}
-      onContactUsFocus={onContactUsFocus}
+      onFocus={onFocus}
+      home={home}
+      product={product}
+      team={team}
+      contactUs={contactUs}
+      isHidden={isHidden}
+      navbarToggler={navbarToggler}
       />
     <Heroes home={home} />
     <Pricing product={product} />

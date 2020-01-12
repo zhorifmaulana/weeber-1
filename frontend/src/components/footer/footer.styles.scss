@@ -9,7 +9,7 @@
   flex-direction: column;
 
   .contact-info {
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -31,5 +31,9 @@
 @media (min-width: 992px) {
   .footer-items {
     flex-direction: row;
+
+    .contact-info {
+      width: 50%;
+    }
   }
 }

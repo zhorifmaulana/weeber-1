@@ -22,7 +22,6 @@
       .socmed-icons {
         display: flex;
         margin-top: 30px;
-        width: 200px;
         .socmed-icon {
           margin-right: 20px;
           background-color: #24425a;
@@ -77,6 +76,7 @@
 
       .img-container {
         margin-bottom: 30px;
+        width: 100%;
       }
     }
   }

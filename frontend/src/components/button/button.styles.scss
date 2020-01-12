@@ -7,6 +7,14 @@
   padding: 10px 24px;
   letter-spacing: 1px;
 
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
   &.form {
     font-weight: 300;
   }
