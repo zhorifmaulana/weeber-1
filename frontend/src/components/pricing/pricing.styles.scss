@@ -1,0 +1,30 @@
+@mixin text-styles($font-size) {
+  font-size: $font-size * 1px;
+  color: #24425a;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.pricing {
+    background-color: #f5f8fd;
+    padding-top: 60px;
+}
+
+.section-header {
+  padding-bottom: 60px;
+  h3 {
+    @include text-styles(36);
+    font-weight: 700;
+  }
+
+  p {
+    @include text-styles(16);
+    width: 75%;
+  }
+}
+
+@media (min-width: 992px) {
+  .section-header p {
+    width: 50%;
+  }
+}

@@ -1,0 +1,39 @@
+.contact-info {
+  margin-bottom: 40px;
+
+  h4 {
+    font-size: 14px;
+    color: #24425a;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 14px;
+    color: #444444;
+  }
+
+  .socmed-icons {
+    display: flex;
+    .socmed-icon {
+      margin-right: 15px;
+      background-color: #24425a;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten(#24425a, 10%);
+      }
+
+      svg {
+        color: #eeeeee;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

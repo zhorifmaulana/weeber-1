@@ -1,0 +1,41 @@
+@mixin font-styling($color, $font-size) {
+  font-size: $font-size * 1px;
+  color: $color;
+}
+
+@mixin input-styling {
+  margin-bottom: 15px;
+  font-size: 14px;
+  padding: 5px 10px;
+  border: 1px solid #dce1ec;
+}
+
+.contact-form {
+  .form-header {
+    h4 {
+      @include font-styling(#24425a, 14);
+      font-weight: bold;
+    }
+
+    p {
+      @include font-styling(#444444, 14);
+    }
+  }
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      @include input-styling
+    }
+
+    textarea {
+      @include input-styling
+    }
+
+    button {
+      align-self: center;
+    }
+  }
+}

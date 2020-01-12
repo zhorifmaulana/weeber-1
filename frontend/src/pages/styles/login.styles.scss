@@ -1,0 +1,101 @@
+.login-page {
+  background-color: #eeeeee;
+  height: 1366px;
+
+  .container {
+    display: flex;
+    padding-top: 60px;
+    height: 95%;
+
+    .contact-form {
+      margin-bottom: 30px;
+    }
+
+    .img-container {
+      width: 50%;
+
+      .header {
+        height: 60px;
+        cursor: pointer;
+      }
+
+      .socmed-icons {
+        display: flex;
+        margin-top: 30px;
+        width: 200px;
+        .socmed-icon {
+          margin-right: 20px;
+          background-color: #24425a;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            background-color: lighten(#24425a, 10%);
+          }
+
+          svg {
+            color: #eeeeee;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  .copyright-section {
+    height: 5%;
+    background-color: #f5f8fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .copyright {
+      text-align: center;
+      padding: 10px 0px;
+
+      span {
+        color: #24425a;
+        cursor: pointer;
+
+        &:hover {
+          color: lighten(#24425a, 10%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .login-page {
+    height: 1024px;
+    .container {
+      flex-direction: column;
+
+      .img-container {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-height: 1080px) and (orientation: landscape) {
+  .login-page {
+    height: 1080px;
+  }
+}
+
+@media (max-height: 900px) and (orientation: landscape) {
+  .login-page {
+    height: 900px;
+  }
+}
+
+@media (max-height: 768px) and (orientation : landscape) {
+  .login-page {
+    height: 768px;
+  }
+}

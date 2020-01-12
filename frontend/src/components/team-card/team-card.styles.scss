@@ -1,0 +1,66 @@
+.team-card {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.member {
+  position: relative;
+  overflow: hidden;
+  max-width: 252px;
+
+  .img-fluid {
+    height: 252px;
+    width: 252px;
+    object-fit: cover;
+  }
+
+  &:hover {
+    .member-info {
+      transform: translateY(0px);
+    }
+  }
+
+  .member-info {
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(35px);
+    transition: all .3s ease-out;
+
+
+    .member-info-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h4 {
+        padding-top: 10px;
+        color: #eeeeee;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      span {
+        color: #eeeeee;
+        font-size: 13px;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      .social {
+        padding-bottom: 10px;
+
+        svg {
+          color: #eeeeee;
+          margin-right: 10px;
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
