@@ -16,8 +16,8 @@ const teams = [
     imgUrl: Aristia,
     id: 1,
     fbUrl: '',
-    instagramUrl: '',
-    linkedInUrl: ''
+    instagramUrl: 'https://www.instagram.com/arisrafandi',
+    linkedInUrl: 'https://www.linkedin.com/in/aristia-reyhan/'
   },
   {
     name: 'Bayu Aditya',
@@ -25,8 +25,8 @@ const teams = [
     imgUrl: Bayu,
     id: 2,
     fbUrl: '',
-    instagramUrl: '',
-    linkedInUrl: ''
+    instagramUrl: 'https://www.instagram.com/bayu.aditya61',
+    linkedInUrl: 'https://www.linkedin.com/in/bayu-aditya/'
   },
   {
     name: 'Zhorif Maulana',

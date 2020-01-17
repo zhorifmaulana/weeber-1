@@ -1,74 +1,128 @@
 .card {
   border: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(65, 62, 102, 0.2);
   transition: all .3s ease-in-out;
-  padding: 36px 0;
+  padding: 24px 0;
   position: inherit;
   margin-bottom: 40px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 5px;
-    background-color: #24425a;
-    transition: 0.5s;
-  }
+  background-color: #24425a;
+  height: 500px;
 
   &:hover {
     transform: scale(1.02);
     box-shadow: 0 2px 15px rgba(65, 62, 102, 0.2);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+}
+
+.card-plan {
+  color: #eee;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__price {
+    font-size: 12px;
+    margin: 0;
+    font-style: italic;
+    font-weight: 100;
+  }
+}
+
+.card-feature {
+  background-color: #eee;
+  margin: 15px 20px;
+  border-radius: 5px;
+
+  ul {
+    list-style: none;
+    color: #24425a;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      font-size: 14px;
+      padding: 5px 20px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #24425a;
+      }
+    }
+  }
+}
+
+.checkbox-container {
+  margin-right: 10px;
+  height: 32px;
+}
+
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: 99;
+    cursor: pointer;
+
+    &:checked ~ .checkbox__custom {
+      background-color: #eee;
+      border-radius: 5px;
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+      border: 2px solid #eee;
+
+      &::after {
+        transform: rotate(45deg) scale(1);
+        opacity:1;
+        left: 10px;
+        top: 4px;
+        width: 8px;
+        height: 16px;
+        border: solid #24425a;
+        border-width: 0 2px 2px 0;
+        background-color: transparent;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__custom {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease-out;
 
     &::after {
-      width: 100%;
-    }
-  }
-
-  .card-header {
-    background-color: white;
-    border: none;
-    text-align-last: center;
-
-    h3 {
-      font-size: 64px;
-      margin-bottom: 0px;
-      color: #24425a;
-      display: flex;
-      justify-content: center;
-
-      .currency {
-        align-self: flex-start;
-        font-size: 30px;
-      }
-
-      .period {
-        font-size: 16px;
-        align-self: flex-end;
-        padding-bottom: 12px;
-        padding-left: 5px;
-      }
-    }
-  }
-
-  .card-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    .card-title {
-      font-size: 24px;
-      color: #24425a;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    .btn {
-      padding: 5px 24px;
-      font-weight: 300;
+      position: absolute;
+      content: "";
+      left: 16px;
+      top: 16px;
+      height: 0px;
+      width: 0px;
+      border-radius: 5px;
+      border: solid #24425a;
+      border-width: 0 3px 3px 0;
+      transform: rotate(0deg) scale(0);
+      opacity:1;
+      transition: all 0.3s ease-out;
     }
   }
 }

@@ -46,7 +46,7 @@ const ContactForm = () => {
       <input onChange={handleChange} type='email' placeholder='Your Email' name='email' value={email} />
       <input onChange={handleChange} type='text' placeholder='Subject' name='subject' value={subject} />
       <textarea onChange={handleMessageChange} rows='6' placeholder='Message' value={message} />
-      <Button color='btn-dark-blue'>Send Message</Button>
+      <Button className='btn--dark-blue'>Send Message</Button>
     </form>
   </div>
 )};

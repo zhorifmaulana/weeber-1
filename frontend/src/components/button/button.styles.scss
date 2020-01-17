@@ -15,16 +15,33 @@
     transform: translateY(1px);
   }
 
+  &--dark-blue {
+    background-color: #24425a;
+
+    &:hover {
+      background-color: darken(#24425a, 10%);
+      color: #eeeeee;
+    }
+  }
+
   &.form {
     font-weight: 300;
   }
-}
 
-.btn-dark-blue {
-  background-color: #24425a;
+  &--card {
+    font-size: 12px;
+    padding: 10px 10px !important;
+    background-color: #eee;
+    color: #24425a;
+    text-transform: none;
+    font-weight: 600 !important;
+    margin: 0 20px;
+    margin-top: auto;
+    max-width: 100%;
 
-  &:hover {
-    background-color: darken(#24425a, 10%);
-    color: #eeeeee;
+    &:hover {
+      background-color: darken(#eee, 10%);
+      color: #24425a;
+    }
   }
 }
