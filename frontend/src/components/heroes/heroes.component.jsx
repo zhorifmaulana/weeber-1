@@ -17,7 +17,7 @@ const Heroes = ({home}) => (
           </div>
           <div className='button mt-4'>
             <Link to='/login'>
-              <Button color='btn-dark-blue'>Get Started</Button>
+              <Button className='btn--dark-blue'>Get Started</Button>
             </Link>
           </div>
         </div>

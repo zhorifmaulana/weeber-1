@@ -11,16 +11,23 @@ class Header extends React.Component {
     isScroll : false,
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', () => {
-      const isScroll = window.scrollY > 50;
-      if (isScroll) {
-        this.setState({isScroll: true})
-      } else {
-        this.setState({isScroll: false})
-      }
-    });
+  handleScroll = () => {
+    const isScroll = window.scrollY > 50;
+    if (isScroll) {
+      this.setState({isScroll: true})
+    } else {
+      this.setState({isScroll: false})
+    }
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
   render() {
     const { isScroll } = this.state;
     const { isHidden, navbarToggler, onFocus, home, product, team, contactUs } = this.props;

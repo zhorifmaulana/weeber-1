@@ -1,10 +1,13 @@
 import React, { Fragment, useRef, useState } from 'react';
 
+import './styles/homepage.styles.scss';
+
 import Header from '../components/header/header.component';
 import Heroes from '../components/heroes/heroes.component';
 import Pricing from '../components/pricing/pricing.component';
 import Team from '../components/team/team.component';
 import Footer from '../components/footer/footer.component';
+import AboutUs from '../components/about-us/about-us.component';
 
 const HomePage = () => {
   const [isHidden, setIsHidden] = useState(true);
@@ -34,7 +37,8 @@ const HomePage = () => {
       isHidden={isHidden}
       navbarToggler={navbarToggler}
       />
-    <Heroes home={home} />
+      <Heroes home={home} />
+      <AboutUs />
     <Pricing product={product} />
     <Team team={team} />
     <Footer contactUs={contactUs} />
