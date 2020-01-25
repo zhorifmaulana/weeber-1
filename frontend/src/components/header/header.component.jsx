@@ -30,7 +30,7 @@ class Header extends React.Component {
 
   render() {
     const { isScroll } = this.state;
-    const { isHidden, navbarToggler, onFocus, home, product, team, contactUs } = this.props;
+    const { isHidden, navbarToggler, onFocus, home, product, aboutUs, contactUs } = this.props;
     return(
       <nav id='nav' className={`navbar navbar-expand-lg navbar-light ${isScroll ? "scrolled" : null} ${isHidden ? null : 'show'}`}>
         <div className='container'>
@@ -44,10 +44,10 @@ class Header extends React.Component {
                 <span onClick={() => onFocus(home)} className={`nav-link active ${isScroll ? "scrolled-link" : null} ${isHidden ? null : 'show'}`} >Home <span className="sr-only">(current)</span></span>
               </li>
               <li className="nav-item">
-                <span onClick={() => onFocus(product)} className={`nav-link active ${isScroll ? "scrolled-link" : null} ${isHidden ? null : 'show'}`} >Product</span>
+                <span onClick={() => onFocus(aboutUs)} className={`nav-link active ${isScroll ? "scrolled-link" : null} ${isHidden ? null : 'show'}`} >About Us</span>
               </li>
               <li className="nav-item">
-                <span onClick={() => onFocus(team)} className={`nav-link active ${isScroll ? "scrolled-link" : null} ${isHidden ? null : 'show'}`} >Team</span>
+                <span onClick={() => onFocus(product)} className={`nav-link active ${isScroll ? "scrolled-link" : null} ${isHidden ? null : 'show'}`} >Product</span>
               </li>
               <li className="nav-item">
                 <span onClick={() => onFocus(contactUs)} className={`nav-link active ${isScroll ? "scrolled-link" : null} ${isHidden ? null : 'show'}`} >Contact Us</span>

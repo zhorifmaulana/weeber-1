@@ -44,12 +44,12 @@ const teams = [
     id: 4,
     fbUrl: 'https://www.facebook.com/azharalifauzi',
     instagramUrl: 'https://www.instagram.com/azharalifauzi',
-    linkedInUrl: 'https://www.linkedin.com/in/azhar-ali-fauzi-4564a117a'
+    linkedInUrl: 'https://www.linkedin.com/in/azhar-ali-4564a117a'
   },
 ]
 
-const Team = ({ team }) => (
-  <div ref={team} className='team'>
+const Team = () => (
+  <div className='team'>
     <div className='container'>
       <div className='section-header'>
         <h3>Meet Our Team</h3>

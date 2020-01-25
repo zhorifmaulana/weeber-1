@@ -13,13 +13,13 @@ const TeamCard = ({name, role, imgUrl, instagramUrl, linkedInUrl, fbUrl}) => (
           <h4>{name}</h4>
           <span>{role}</span>
           <div className="social">
-            <a href={fbUrl}>
+            <a target="_blank" href={fbUrl} rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'facebook']} />
             </a>
-            <a href={instagramUrl}>
+            <a target="_blank" href={instagramUrl} rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'instagram']} />
             </a>
-            <a href={linkedInUrl}>
+            <a target="_blank" href={linkedInUrl} rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
             </a>
           </div>

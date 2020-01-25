@@ -14,7 +14,7 @@ const HomePage = () => {
 
   const home = useRef();
   const product = useRef();
-  const team = useRef();
+  const aboutUs = useRef();
   const contactUs = useRef();
 
   const onFocus = (ref) => {
@@ -32,15 +32,15 @@ const HomePage = () => {
       onFocus={onFocus}
       home={home}
       product={product}
-      team={team}
+      aboutUs={aboutUs}
       contactUs={contactUs}
       isHidden={isHidden}
       navbarToggler={navbarToggler}
       />
       <Heroes home={home} />
-      <AboutUs />
+      <AboutUs aboutUs={aboutUs} />
     <Pricing product={product} />
-    <Team team={team} />
+    <Team />
     <Footer contactUs={contactUs} />
   </Fragment>
 )};

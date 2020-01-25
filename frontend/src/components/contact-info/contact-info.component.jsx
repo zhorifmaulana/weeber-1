@@ -8,18 +8,25 @@ const ContactInfo = () => (
   <div className="contact-info">
     <h4>Contact Us</h4>
     <p>
-      Gedung F Departemen Fisika <br/>
-      Kampus UI <br/>
       Depok<br/>
+      West Java <br/>
       Indonesia <br/>
       <strong>Phone:</strong> +62 821 2048 9633<br/>
       <strong>Email:</strong> weeber_project@gmail.com<br/>
     </p>
     <div className='socmed-icons'>
-      <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'twitter']} /></span>
-      <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'facebook-f']} /></span>
-      <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'instagram']} /></span>
-      <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></span>
+      <a target="_blank" href="/" rel="noopener noreferrer">
+        <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'twitter']} /></span>
+      </a>
+      <a target="_blank" href="/" rel="noopener noreferrer">
+        <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'facebook-f']} /></span>
+      </a>
+      <a target="_blank" href="https://www.instagram.com/weeber_id/" rel="noopener noreferrer">
+        <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'instagram']} /></span>
+      </a>
+      <a target="_blank" href="/" rel="noopener noreferrer">
+        <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></span>
+      </a>
     </div>
   </div>
 );

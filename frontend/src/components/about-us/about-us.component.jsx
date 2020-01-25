@@ -4,8 +4,8 @@ import './about-us.styles.scss';
 
 import DINO from '../../assets/img/DINO.png';
 
-const AboutUs = () => (
-  <div className='about-us'>
+const AboutUs = ({aboutUs}) => (
+  <div ref={aboutUs} className='about-us'>
     <h2 className='heading-secondary'>About Us</h2>
     <div className='d-flex justify-content-center align-items-center'>
       <h4 className='about-us__description'>We Are Here, Because of our concern for campus level organizations who has a big vision, but is not followed by a coolness the face of the organization through their website</h4>

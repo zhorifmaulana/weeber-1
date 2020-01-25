@@ -18,10 +18,18 @@ const LoginPage = () => (
           <img className='header' src={Logo} alt='Weeber Logo' />
         </Link>
         <div className='socmed-icons'>
-          <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'twitter']} /></span>
-          <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'facebook-f']} /></span>
-          <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'instagram']} /></span>
-          <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></span>
+          <a href="/" target="_blank" rel="noopener noreferrer">
+            <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'twitter']} /></span>
+          </a>
+          <a href="/" target="_blank" rel="noopener noreferrer">
+            <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'facebook-f']} /></span>
+          </a>
+          <a href="https://www.instagram.com/weeber_id/" target="_blank" rel="noopener noreferrer">
+            <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'instagram']} /></span>
+          </a>
+          <a href="/" target="_blank" rel="noopener noreferrer">
+            <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></span>
+          </a>
         </div>
       </div>
       <ContactForm />
