@@ -19,7 +19,7 @@ services:
             context: ../
             dockerfile: Dockerfile
         image: weeber:0.0.1
-        container_name: weeber
+        container_name: weeber_web
         networks:
             default:
                 ipv4_address: 192.168.0.3
