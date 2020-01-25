@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import Button from '../button/button.component';
-
 import './contact-form.styles.scss';
 
 const ContactForm = () => {
@@ -12,6 +10,14 @@ const ContactForm = () => {
     message: ''
   });
 
+  const [encodedState, setEncodedState] = useState({
+    encodedName: '',
+    encodedEmail: '',
+    encodedSubject: '',
+    encodedMessage: ''
+  });
+
+  const { encodedName, encodedEmail, encodedSubject, encodedMessage } = encodedState;
   const { name, email, subject, message } = state;
 
   const handleChange = event => {
@@ -31,8 +37,27 @@ const ContactForm = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(state);
+    setEncodedState({
+      encodedEmail: encodeURI(email),
+      encodedName: encodeURI(name),
+      encodedSubject: encodeURI(subject),
+      encodedMessage: encodeURI(message)
+    });
+    setState({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+
+    setTimeout(() => {
+      setEncodedState({
+        encodedEmail: '',
+        encodedName: '',
+        encodedSubject: '',
+        encodedMessage: ''
+      });
+    }, 1000)
   };
 
   return (
@@ -46,7 +71,13 @@ const ContactForm = () => {
       <input onChange={handleChange} type='email' placeholder='Your Email' name='email' value={email} />
       <input onChange={handleChange} type='text' placeholder='Subject' name='subject' value={subject} />
       <textarea onChange={handleMessageChange} rows='6' placeholder='Message' value={message} />
-      <Button className='btn--dark-blue'>Send Message</Button>
+      <a
+        href={`mailto:azharalifauzi@gmail.com?subject=${encodedSubject}&body=${encodedMessage}%0A%0A${encodedName}%0A${encodedEmail}`}
+        className='btn btn--dark-blue'
+        onClick={handleSubmit}
+        >
+      Send Message</a>
+
     </form>
   </div>
 )};
