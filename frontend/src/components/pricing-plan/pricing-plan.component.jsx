@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from '../button/button.component';
-
 import './pricing-plan.styles.scss';
 
 const PricingPlan = ({name, price, features}) => (
@@ -24,7 +22,7 @@ const PricingPlan = ({name, price, features}) => (
             {features.map(feature => <li key={Math.random()}>{feature}</li>)}
           </ul>
         </div>
-        <Button className='btn--card'>Check Our Prototypes!</Button>
+        <a href="/login" className='btn btn--card'>Contact Us For Details!</a>
       </div>
     </div>
 );
