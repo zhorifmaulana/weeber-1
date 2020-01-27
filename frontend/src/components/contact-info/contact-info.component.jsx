@@ -15,18 +15,18 @@ const ContactInfo = () => (
       <strong>Email:</strong> weeber_project@gmail.com<br/>
     </p>
     <div className='socmed-icons'>
-      <a target="_blank" href="/" rel="noopener noreferrer">
+      {/* <a target="_blank" href="/" rel="noopener noreferrer">
         <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'twitter']} /></span>
-      </a>
-      <a target="_blank" href="/" rel="noopener noreferrer">
+      </a> */}
+      <a target="_blank" href="https://www.facebook.com/Weeber-Web-Services-106725284216759/" rel="noopener noreferrer">
         <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'facebook-f']} /></span>
       </a>
       <a target="_blank" href="https://www.instagram.com/weeber_id/" rel="noopener noreferrer">
         <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'instagram']} /></span>
       </a>
-      <a target="_blank" href="/" rel="noopener noreferrer">
+      {/* <a target="_blank" href="/" rel="noopener noreferrer">
         <span className='socmed-icon'><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></span>
-      </a>
+      </a> */}
     </div>
   </div>
 );
