@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PricingPlan from '../pricing-plan/pricing-plan.component';
+import PricingAdditional from '../pricing-additional/pricing-additional.component';
 
 import './pricing.styles.scss';
 
@@ -69,6 +70,20 @@ const Pricing = ({product}) => (
       </div>
       <div className='row flex-items-xs-middle flex-items-xs-center'>
         {Plans.map(({id, ...otherProps}) => <PricingPlan key={id} {...otherProps} />)}
+      </div>
+      <div className='row'>
+        <div className='col-xs-12 col-lg-3 hidden'>
+          &nbsp;
+        </div>
+        <div className='col-xs-12 col-lg-3'>
+            <PricingAdditional title='Portal Kajian' price='10.000' />
+        </div>
+        <div className='col-xs-12 col-lg-3'>
+          <PricingAdditional title='Apresiasi' price='10.000' />
+        </div>
+        <div className='col-xs-12 col-lg-3'>
+            <PricingAdditional title='End Point' price='20.000' />
+        </div>
       </div>
     </div>
   </div>

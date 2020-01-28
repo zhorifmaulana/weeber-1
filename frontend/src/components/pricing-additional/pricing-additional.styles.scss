@@ -1,0 +1,32 @@
+.card-additional {
+  background-color: #24425a;
+  padding: 15px 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(65, 62, 102, 0.2);
+  display: flex;
+  align-items: center;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 15px rgba(65, 62, 102, 0.2);
+  }
+
+  &__description {
+    color: #eee;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__price {
+    font-size: 12px;
+    margin: 0;
+    font-style: italic;
+    font-weight: 100;
+  }
+}
