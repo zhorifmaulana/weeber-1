@@ -5,12 +5,18 @@ import './styles/login.styles.scss';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Plans } from '../components/pricing/pricing.component';
 
 import Logo from '../assets/img/logowhite.png';
 
 import ContactForm from '../components/contact-form/contact-form.component';
 
-const LoginPage = () => (
+const Login = ({match}) => {
+  const plan = Plans.filter((plan) => {
+    const { Id } = match.params;
+    return Id == plan.id;
+  });
+  return (
   <div className='login-page'>
     <div className='container'>
       <div className='img-container'>
@@ -32,12 +38,12 @@ const LoginPage = () => (
           </a>
         </div>
       </div>
-      <ContactForm />
+      <ContactForm plan={plan} />
     </div>
     <div className='copyright-section'>
       <span className='copyright'>Designed by <span>Weeber Web Development Team</span></span>
     </div>
   </div>
-);
+)};
 
-export default LoginPage;
+export default Login;

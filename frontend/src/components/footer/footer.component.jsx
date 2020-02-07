@@ -11,7 +11,7 @@ const Footer = ({ contactUs }) => (
       <div className='container'>
         <div className='footer-items'>
           <ContactInfo />
-          <ContactForm />
+          <ContactForm plan={[]} />
         </div>
       </div>
     </div>
