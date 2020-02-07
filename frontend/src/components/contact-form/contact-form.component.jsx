@@ -4,47 +4,41 @@ import Button from '../button/button.component';
 
 import './contact-form.styles.scss';
 
-const ContactForm = () => {
+const ContactForm = ({plan}) => {
   const [state, setState] = useState({
     name: '',
     email: '',
-    subject: '',
-    message: ''
+    subject: ''
   });
 
-  const { name, email, subject, message } = state;
+  const [message, setMessage] = useState('');
 
-  const [encodedState, setEncodedState] = useState({
-    encodedName: name,
-    encodedEmail: email,
-    encodedSubject: subject,
-    encodedMessage: message
-  });
+  const { name, email, subject } = state;
 
-  const { encodedName, encodedEmail, encodedSubject, encodedMessage } = encodedState;
+  const [encodedState, setEncodedState] = useState(message);
   const uaenvironment = navigator.userAgent;
 
   useEffect(() => {
-    setEncodedState({
-      encodedEmail: encodeURI(email),
-      encodedName: encodeURI(name),
-      encodedSubject: encodeURI(subject),
-      encodedMessage: encodeURI(message)
-    });
+    if (!plan[0]) {
+      plan.push({name: ''});
+    }
+
+    if (plan) {
+      setMessage(`${!plan[0].name ? '' : `Saya mau pesan paket ${plan[0].name}`}`);
+    }
+  },[plan]);
+
+  useEffect(() => {
+    setEncodedState(encodeURI(message));
 
     if (
       uaenvironment.match(/Android/i) ||
-      uaenvironment.match(/iPhone/i) || 
+      uaenvironment.match(/iPhone/i) ||
       uaenvironment.match(/iPad/i)
       ) {
-      setEncodedState({
-        encodedEmail: encodeURI(email),
-        encodedName: encodeURI(name),
-        encodedSubject: encodeURI(subject),
-        encodedMessage: encodeURI(message).replace(/%0A/g, "<br>")
-      })
+      setEncodedState(encodeURI(message).replace(/%0A/g, "<br>"));
     }
-  },[state]);
+  },[state, message, uaenvironment]);
 
   const handleChange = event => {
     const {name, value} = event.target;
@@ -57,9 +51,7 @@ const ContactForm = () => {
   const handleMessageChange = event => {
     const {value} = event.target;
     event.preventDefault();
-    setState({
-      ...state, message: value
-    });
+    setMessage(value);
   };
 
   const handleSubmit = (event) => {
@@ -72,9 +64,9 @@ const ContactForm = () => {
       uaenvironment.match(/iPhone/i) ||
       uaenvironment.match(/iPad/i)
       ) {
-      body = `mailto:weeber.id@gmail.com?subject=${encodedSubject}&body=${encodedMessage}<br><br>${encodedName}<br>${encodedEmail}`;
+      body = `mailto:weeber.id@gmail.com?subject=${subject}&body=${encodedState}<br><br>${name}<br>${email}`;
     } else {
-      body = `mailto:weeber.id@gmail.com?subject=${encodedSubject}&body=${encodedMessage}%0A%0A${encodedName}%0A${encodedEmail}`;
+      body = `mailto:weeber.id@gmail.com?subject=${subject}&body=${encodedState}%0A%0A${name}%0A${email}`;
     }
 
       window.location.href = body;
@@ -83,9 +75,9 @@ const ContactForm = () => {
       setState({
         name: '',
         email: '',
-        subject: '',
-        message: ''
+        subject: ''
       });
+      setMessage('');
     }, 2000)
   };
 

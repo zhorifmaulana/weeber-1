@@ -5,7 +5,7 @@ import PricingAdditional from '../pricing-additional/pricing-additional.componen
 
 import './pricing.styles.scss';
 
-const Plans = [
+export const Plans = [
   {
     id: 1,
     name : 'Electron',
@@ -69,7 +69,7 @@ const Pricing = ({product}) => (
         <p>We are providing several packages in order to represent your organization until maximizing your organization's workflow!</p>
       </div>
       <div className='row flex-items-xs-middle flex-items-xs-center'>
-        {Plans.map(({id, ...otherProps}) => <PricingPlan key={id} {...otherProps} />)}
+        {Plans.map(({id, ...otherProps}) => <PricingPlan key={id} id={id} {...otherProps} />)}
       </div>
       <div className='row'>
         <div className='col-xs-12 col-lg-3 hidden'>

@@ -4,7 +4,7 @@ import Checkbox from '../checkbox/checkbox.component';
 
 import './pricing-plan.styles.scss';
 
-const PricingPlan = ({name, price, features}) => (
+const PricingPlan = ({name, price, features,id}) => (
     <div className="col-xs-12 col-lg-3">
       <div className="card">
         <div className="card__header">
@@ -19,7 +19,7 @@ const PricingPlan = ({name, price, features}) => (
             {features.map(feature => <li key={Math.random()}>{feature}</li>)}
           </ul>
         </div>
-        <a href="/login" className='btn btn--card'>Contact Us For Details!</a>
+        <a href={`/login/${id}`} className='btn btn--card'>Contact Us For Details!</a>
       </div>
     </div>
 );
