@@ -1,0 +1,87 @@
+.shorten-link {
+  height: 100vh;
+  background: #eee;
+  &__form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__input {
+    margin-bottom: 15px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #dce1ec;
+    width: 28rem;
+  }
+  @mixin alert {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    min-width: 28rem;
+    text-align: center;
+  }
+
+  &__success {
+    @include alert;
+    background-color: #2ffa65;
+  }
+
+  &__fail {
+    @include alert;
+    background-color: #fa362f;
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0;
+  min-height: 90vh;
+
+  &__header {
+    width: 70%;
+    padding: 0.5rem 1.5rem;
+    background-color: #eee;
+
+    border-bottom: 1px solid #bbb;
+    span {
+      display: inline-block;
+    }
+
+    span:first-child {
+      width: 20px;
+    }
+
+    span:nth-child(2) {
+      width: 35rem;
+      margin-left: 4rem;
+    }
+  }
+
+  &__item {
+    padding: 8px 1.5rem;
+    width: 70%;
+    border-bottom: 1px solid #bbb;
+
+    &:nth-child(odd) {
+      background-color: #ccc;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    span:first-child {
+      width: 20px;
+    }
+    span:nth-child(2) {
+      margin-left: 4rem;
+      width: 35rem;
+    }
+  }
+}

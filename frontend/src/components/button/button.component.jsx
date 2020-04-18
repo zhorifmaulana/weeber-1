@@ -1,8 +1,8 @@
-import React from 'react';
-import './button.styles.scss';
+import React from "react";
+import "./button.styles.scss";
 
-const Button = ({children, className}) => (
-  <button className={`btn ${className ? className : null}`}>
+const Button = ({ children, className, onClick }) => (
+  <button onClick={onClick} className={`btn ${className ? className : null}`}>
     {children}
   </button>
 );
